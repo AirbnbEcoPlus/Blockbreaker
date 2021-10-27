@@ -1,0 +1,14 @@
+name: BlockBreaker
+version: 1.0
+author: Krfcm2
+main: fr.endide.blockbreaker.Main
+commands:
+  bbrjoin:
+    description: Ouvrir le menu
+    permission: bbr.default
+  bbrleave:
+    description: Passe une Personne en WANTED
+    permission: bbr.default
+  bbrshop:
+    description: Ouvre le Shop
+    permission: bbr.admin
