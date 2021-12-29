@@ -17,7 +17,7 @@ public class bbrShop implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
 		
 		Player player = (Player) sender ;
-		Inventory bbrinv = Bukkit.createInventory(null, 9, "ยง8BlockBreakerSHOP");
+		Inventory bbrinv = Bukkit.createInventory(null, 9, "ง8BlockBreakerSHOP");
 		
 		ItemStack  tnt = new ItemStack(Material.TNT, 1);
 		ItemMeta tntM = tnt.getItemMeta();

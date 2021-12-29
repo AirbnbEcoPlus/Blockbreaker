@@ -1,12 +1,9 @@
 package fr.endide.blockbreaker;
 
-import java.io.File;
-import java.io.IOException;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.endide.blockbreaker.arenas.Arena;
@@ -19,8 +16,8 @@ import fr.endide.blockbreaker.listen.bbrBlockCounter;
 
 public class Main extends JavaPlugin {
 public ArenaManager arenaManager = new ArenaManager(this);
-public File arenaFile;
-public YamlConfiguration arenaConfig;
+
+
 
 	public void onEnable(){
 		saveDefaultConfig();
@@ -32,19 +29,11 @@ public YamlConfiguration arenaConfig;
 		if(getDataFolder().exists()) {
 			getDataFolder().mkdir();
 		}
-		arenaFile = new File(getDataFolder() + File.separator + "arenas.yml");
-	    if(!arenaFile.exists()) {
-	    	try {
-				arenaFile.createNewFile();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	    }
-	    GetArenaList();
+		
 	}
 	public void GetArenaList(){
-	    arenaConfig = YamlConfiguration.loadConfiguration(arenaFile);
-	    ConfigurationSection arenaSection = arenaConfig.getConfigurationSection("arenas");
+
+	    ConfigurationSection arenaSection = getConfig().getConfigurationSection("arenas");
 	    for(String string : arenaSection.getKeys(false)) {
 	    	String loc1 = arenaSection.getString(string + ".loc1");
 	    	String world = arenaSection.getString(string + ".world");

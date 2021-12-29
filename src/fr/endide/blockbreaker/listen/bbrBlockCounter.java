@@ -214,7 +214,7 @@ public class bbrBlockCounter implements Listener {
     		if(player.getInventory().contains(Material.WOOD_PICKAXE)) {
     		player.getInventory().remove(Material.WOOD_PICKAXE);
     		player.getInventory().addItem(new ItemStack(Material.STONE_PICKAXE, 1));
-    		player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pioche, votre pioche s'amÃ©liore");
+    		player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pioche, votre pioche s'améliore");
     		
 		  }
     	}
@@ -222,77 +222,77 @@ public class bbrBlockCounter implements Listener {
 			if(player.getInventory().contains(Material.STONE_PICKAXE)) {
 			player.getInventory().remove(Material.STONE_PICKAXE);
 			player.getInventory().addItem(new ItemStack(Material.IRON_PICKAXE, 1));
-    		player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pioche, votre pioche s'amÃ©liore");
+    		player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pioche, votre pioche s'améliore");
 		  }
 		}
 		if(main.getConfig().getLong(name + ".pioche") == 120) {
 			if(player.getInventory().contains(Material.IRON_PICKAXE)) {
 			player.getInventory().remove(Material.IRON_PICKAXE);
 			player.getInventory().addItem(new ItemStack(Material.DIAMOND_PICKAXE, 1));
-    		player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pioche, votre pioche s'amÃ©liore");
+    		player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pioche, votre pioche s'améliore");
 		  }
 		}
 		if(main.getConfig().getLong(name + ".hache") == 40) {
 			if(player.getInventory().contains(Material.WOOD_AXE)) {
 			player.getInventory().remove(Material.WOOD_AXE);
 			player.getInventory().addItem(new ItemStack(Material.STONE_AXE, 1));
-			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre hache, votre hache s'amÃ©liore");
+			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre hache, votre hache s'améliore");
 		  }
 		}
 		if(main.getConfig().getLong(name + ".hache") == 80) {
 			if(player.getInventory().contains(Material.STONE_AXE)) {
 			player.getInventory().remove(Material.STONE_AXE);
 			player.getInventory().addItem(new ItemStack(Material.IRON_AXE, 1));
-			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre hache, votre hache s'amÃ©liore");
+			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre hache, votre hache s'améliore");
 		  }
 		}
 		if(main.getConfig().getLong(name + ".hache") == 120) {
 			if(player.getInventory().contains(Material.IRON_AXE)) {
 			player.getInventory().remove(Material.IRON_AXE);
 			player.getInventory().addItem(new ItemStack(Material.DIAMOND_AXE, 1));
-			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre hache, votre hache s'amÃ©liore");
+			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre hache, votre hache s'améliore");
 		  }
 		}
 		if(main.getConfig().getLong(name + ".pelle") == 40) {
 			if(player.getInventory().contains(Material.WOOD_SPADE)) {
 			player.getInventory().remove(Material.WOOD_SPADE);
 			player.getInventory().addItem(new ItemStack(Material.STONE_SPADE, 1));
-			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pelle, votre pelle s'amÃ©liore");
+			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pelle, votre pelle s'améliore");
 		  }
 		}	
 		if(main.getConfig().getLong(name + ".pelle") == 80) {
 			if(player.getInventory().contains(Material.STONE_SPADE)) {
 			player.getInventory().remove(Material.STONE_SPADE);
 			player.getInventory().addItem(new ItemStack(Material.IRON_SPADE, 1));
-			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pelle, votre pelle s'amÃ©liore");
+			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pelle, votre pelle s'améliore");
 		  }
 		}
 		if(main.getConfig().getLong(name + ".pelle") == 120) {
 			if(player.getInventory().contains(Material.IRON_SPADE)) {
 			player.getInventory().remove(Material.IRON_SPADE);
 			player.getInventory().addItem(new ItemStack(Material.DIAMOND_SPADE, 1));
-			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pelle, votre pelle s'amÃ©liore");
+			player.sendMessage("Bravo vous avez casser beaucoup de blocs avec votre pelle, votre pelle s'améliore");
 		  }
 		}
 		if(main.getConfig().getLong(name + ".epee") == 30) {
 			if(player.getInventory().contains(Material.WOOD_SWORD)) {
 			player.getInventory().remove(Material.WOOD_SWORD);
 			player.getInventory().addItem(new ItemStack(Material.STONE_SWORD));
-			player.sendMessage("Triple Kill, votre Ã‰pÃ©e s'amÃ©liore");
+			player.sendMessage("Triple Kill, votre épée s'améliore");
 		  }
 		}	
 		if(main.getConfig().getLong(name + ".epee") == 60) {
 			if(player.getInventory().contains(Material.STONE_SWORD)) {
 			player.getInventory().remove(Material.STONE_SWORD);
 			player.getInventory().addItem(new ItemStack(Material.IRON_SWORD));
-			player.sendMessage("Vous faites un massacre, votre Ã‰pÃ©e s'amÃ©liore");
+			player.sendMessage("Vous faites un massacre, votre épée s'améliore");
 		  }
 		}
 		if(main.getConfig().getLong(name + ".epee") == 120) {
 			if(player.getInventory().contains(Material.IRON_SWORD)) {	
 			player.getInventory().remove(Material.IRON_SWORD);
 			player.getInventory().addItem(new ItemStack(Material.DIAMOND_SWORD));
-			player.sendMessage("Vous etes un dieu de l'Ã©pÃ©e, c'est un massacre, votre Ã‰pÃ©e s'amÃ©liore");
+			player.sendMessage("Vous etes un dieu de l'épée, c'est un massacre, votre épée s'améliore");
 		  }
 		}
 		
@@ -300,9 +300,9 @@ public class bbrBlockCounter implements Listener {
     public void onPlayerRepsawn (PlayerRespawnEvent event) {
     	Player player = event.getPlayer();
     	String name = player.getName();
-    	if(main.arenaManager.PlayerIsOnArena(player)== true) {
-  	      if(main.arenaManager.getArenaIsStarted(player) == true) {
-  	    	player.sendMessage("Vous avez Ã©tÃ© tuez vous perder tout vos pointTools et votre inventaire");
+    	if(main.arenaManager.PlayerIsOnArena(player)== false) {
+  	      
+  	    	player.sendMessage("Vous avez été tuez vous perder tout vos pointTools et votre inventaire");
 			player.getInventory().clear();
 			player.getInventory().addItem(new ItemStack(Material.WOOD_SWORD, 1));
 			player.getInventory().addItem(new ItemStack(Material.WOOD_PICKAXE, 1));
@@ -313,7 +313,7 @@ public class bbrBlockCounter implements Listener {
 			main.getConfig().set(name + ".pelle", 0);
 			main.getConfig().set(name + ".epee", 0);
 			main.saveConfig();
-  	      }
+  	      
     	}
     }
 	@EventHandler
@@ -321,8 +321,9 @@ public class bbrBlockCounter implements Listener {
     	Player killed = event.getEntity().getPlayer();
     	Player killer = event.getEntity().getKiller();
     	String name = killer.getName();
-    	if(main.arenaManager.PlayerIsOnArena(killed) == true) {
+    	if(main.arenaManager.PlayerIsOnArena(killed) == false) {
         if (event.getEntity() instanceof Player) {
+        	
         }
         if (event.getEntity().getKiller() instanceof Player) {
         	killer.sendMessage("Bravo vous avez tuez une personne adverse");
@@ -339,7 +340,7 @@ public class bbrBlockCounter implements Listener {
 			Player player = (Player) event.getWhoClicked();
 			ItemStack current = event.getCurrentItem();		
 			if(current == null) return;
-			if(inv.getName().equalsIgnoreCase("Â§8BlockBreakerSHOP")) {
+			if(inv.getName().equalsIgnoreCase("§8BlockBreakerSHOP")) {
 				if(current.getType() == Material.TNT) {
 					event.setCancelled(true);
 					if(player.getInventory().contains(Material.SAND, 8)) {

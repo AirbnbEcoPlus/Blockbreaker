@@ -1,6 +1,5 @@
 package fr.endide.blockbreaker.arenas;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,12 +27,11 @@ public class ArenaManager {
 		this.arenas.add(arena);
 	}
 	public void joinArena(Player firstPlayer) {
-		
 		Arena nextArena = getNextArena();
 		if(nextArena != null)
 		{
 			nextArena.getPlayers().add(firstPlayer);
-			firstPlayer.sendMessage("Â§cVous avez rejoins une arene");
+			firstPlayer.sendMessage("§cVous avez rejoins une arene");
 			Location loc = new Location(Bukkit.getWorld("normal_flat"), 0, 60, 0);
 			firstPlayer.teleport(loc);
 			main.arenaManager.TeamSplit(firstPlayer);
@@ -43,26 +41,26 @@ public class ArenaManager {
 			firstPlayer.getInventory().addItem(new ItemStack(Material.WOOD_AXE, 1));
 			firstPlayer.getInventory().addItem(new ItemStack(Material.WOOD_SPADE, 1));
 			nextArena.setScoreboard(firstPlayer);
-			firstPlayer.sendMessage("Â§8-----Â§3Bienvenue dans Block BreakerÂ§8-----");
-			firstPlayer.sendMessage("Â§8--------Â§cMais quel est le but ?Â§8--------");
+			firstPlayer.sendMessage("§8-----§3Bienvenue dans Block Breaker§8-----");
+			firstPlayer.sendMessage("§8--------§cMais quel est le but ?§8--------");
 			firstPlayer.sendMessage("");
-			firstPlayer.sendMessage("Â§3Vous devez vous et votre Ã©quipe dÃ©truire le plus de blocs");
-			firstPlayer.sendMessage("Â§3Si vous arriver a 1000 blocs alors vous avez gagner");
+			firstPlayer.sendMessage("§3Vous devez vous et votre équipe détruire le plus de blocs");
+			firstPlayer.sendMessage("§3Si vous arriver a 1000 blocs alors vous avez gagner");
 			firstPlayer.sendMessage("");
-			firstPlayer.sendMessage("Â§3Mais il y a quelques mechaniques qui pimenteront le jeu :");
+			firstPlayer.sendMessage("§3Mais il y a quelques mechaniques qui pimenteront le jeu :");
 			firstPlayer.sendMessage("");
-			firstPlayer.sendMessage("Â§7-Â§3Quand vous casser des blocs vos Outils s'amÃ©liorent");
-			firstPlayer.sendMessage("Â§7-Â§3Quand vous tuez des gens votre Ã‰pÃ©e s'amÃ©liore");
-			firstPlayer.sendMessage("Â§7-Â§3Mais si vous mourrez vous perdrez tout vos point d'amÃ©lioration(PointTools)");
+			firstPlayer.sendMessage("§7-§3Quand vous casser des blocs vos Outils s'améliorent");
+			firstPlayer.sendMessage("§7-§3Quand vous tuez des gens votre épée s'améliore");
+			firstPlayer.sendMessage("§7-§3Mais si vous mourrez vous perdrez tout vos point d'amélioration(PointTools)");
 			firstPlayer.sendMessage("");
-			firstPlayer.sendMessage("Â§7-Â§3Vous avez accÃ©s Ã  un shop avec /bbrshop");
-			firstPlayer.sendMessage("Â§3Vous pourrez echanger des choses contre des minerais");
+			firstPlayer.sendMessage("§7-§3Vous avez accés au shop avec /bbrshop");
+			firstPlayer.sendMessage("§3Vous pourrez echanger des choses contre des minerais");
 			firstPlayer.sendMessage("");
-			firstPlayer.sendMessage("Â§3Voila les regles de bases n'oubliez pas que vous pouvez faire des stratÃ©gies");
-			firstPlayer.sendMessage("Â§3Sur ce bonne chance la partie ne devrait pas tarder a commencer");
-			if(nextArena.getPlayers().size() == 8) {
+			firstPlayer.sendMessage("§3Voila les regles de bases n'oubliez pas que vous pouvez faire des stratégies");
+			firstPlayer.sendMessage("§3Sur ce bonne chance la partie ne devrait pas tarder a commencer");
+			if(nextArena.getPlayers().size() == 2) {
 				for(Player p : Bukkit.getOnlinePlayers()){
-				    if(p.getWorld().getName().equals("normal_flat")){
+				    if(p.getWorld().getName().equals("world")){
 				        if(PlayerIsOnArena(p)) {
 				        	p.teleport(nextArena.getFirstLoc());
 				        }
@@ -74,7 +72,7 @@ public class ArenaManager {
 		else {		
 			if(isWorldGenerate == false) {
 			isWorldGenerate = true;
-			firstPlayer.sendMessage("Â§cIl n'y a aucune arenes disponible, CrÃ©ation d'une arene en cours...");
+			firstPlayer.sendMessage("§cIl n'y a aucune arenes disponible, Création d'une arene en cours...");
 			WorldCreator wc = new WorldCreator(firstPlayer.getName() + "BlockBreaker");
 			wc.environment(World.Environment.NORMAL);
 			wc.type(WorldType.NORMAL);
@@ -83,20 +81,18 @@ public class ArenaManager {
 			WorldBorder border = world.getWorldBorder();
 			border.setSize(100.0);
 			border.setCenter(0.0, 0.0);
-			main.arenaConfig.set("arenas." + firstPlayer.getName() + "BlockBreaker" + ".loc1", "0,100,0");
-			main.arenaConfig.set("arenas." + firstPlayer.getName() + "BlockBreaker" + ".world", firstPlayer.getName() + "BlockBreaker");
-			main.arenaConfig.set("arenas." + firstPlayer.getName() + "BlockBreaker" + ".bluePlayers", 0);
-			main.arenaConfig.set("arenas." + firstPlayer.getName() + "BlockBreaker" + ".redPlayers", 0);
+			main.getConfig().set("arenas." + firstPlayer.getName() + "BlockBreaker" + ".loc1", "0,100,0");
+			main.getConfig().set("arenas." + firstPlayer.getName() + "BlockBreaker" + ".world", firstPlayer.getName() + "BlockBreaker");
+			main.getConfig().set("arenas." + firstPlayer.getName() + "BlockBreaker" + ".bluePlayers", 0);
+			main.getConfig().set("arenas." + firstPlayer.getName() + "BlockBreaker" + ".redPlayers", 0);
+			main.saveConfig();
 			isWorldGenerate = false;
-			}else {
-				firstPlayer.sendMessage("Â§cIl n'y a aucune arenes disponible et une arene est en train d'etre crÃ©er veuillez recommencer dans 30 secondes");
-			}
-			try {
-				main.arenaConfig.save(main.arenaFile);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
 			main.GetArenaList();
+			main.arenaManager.joinArena(firstPlayer);
+			}else {
+				firstPlayer.sendMessage("§cIl n'y a aucune arenes disponible et une arene est en train d'etre créer veuillez recommencer dans 30 secondes");
+			}
+			
 		}
 	}
 	public Arena getArenaByPlayer(Player player) {

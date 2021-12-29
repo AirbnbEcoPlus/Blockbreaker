@@ -83,21 +83,17 @@ public class Arena{
 		this.redCounter += point;
 		this.Redscore.setScore(this.redCounter);
 		if(this.redCounter == 1000) {
-		     player.sendMessage("L'équipe Rouge à gagné merci d'avoir jouer");
+		     player.sendMessage("L'équipe Rouge a gagn�e merci d'avoir jouer");
 		     restart(player);
-		}else {
-			player.sendMessage("Vous avez "+ redCounter + " point Bleu");
-			}
+		}
 		return redCounter;
 	}
 	public int blueScore(Player player,int point){
 		this.blueCounter += point;
 		this.Bluescore.setScore(this.blueCounter);
         if(this.blueCounter == 1000) {
-        	player.sendMessage("L'équipe Bleu à gagné merci d'avoir jouer");
+        	player.sendMessage("L'�quipe Bleu a gagn�e merci d'avoir jouer");
         	restart(player);
-		}else {
-		player.sendMessage("Vous avez "+ blueCounter + " point Bleu");
 		}
 		return blueCounter;
 		
@@ -112,7 +108,7 @@ public class Arena{
 		this.isStarted = false;
 		this.redCounter = 0;
 		this.blueCounter = 0;
-		main.arenaConfig.set(world.getName(), null);
+		main.getConfig().set(world.getName(), null);
 	}
 }
 

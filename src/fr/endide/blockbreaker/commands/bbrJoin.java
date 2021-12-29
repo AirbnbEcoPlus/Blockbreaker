@@ -19,7 +19,7 @@ public class bbrJoin implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String msg, String[] args) {
 		Player player = (Player) sender;
 	    String name = player.getName();
-			if(main.arenaManager.PlayerIsOnArena(player) == true){
+			if(main.arenaManager.PlayerIsOnArena(player) == false){
     			main.getConfig().createSection(name);
     			main.getConfig().set(name + ".pioche", 0);
     			main.getConfig().set(name + ".hache", 0);
@@ -28,7 +28,7 @@ public class bbrJoin implements CommandExecutor {
     			main.saveConfig();
     			main.arenaManager.joinArena(player);
 			}else {
-				player.sendMessage("ยง3Vous etes deja dans une arene");
+				player.sendMessage("ง3Vous etes deja dans une arene");
 			}
 		return false;
 	}
