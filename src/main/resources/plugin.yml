@@ -1,0 +1,15 @@
+name: Blockbreaker
+version: '${project.version}'
+main: fr.endide.blockbreaker.Blockbreaker
+authors: [ Krfcm2 ]
+description: Un Jeu ou casser des blocs mene a la victoire
+commands:
+  bbrjoin:
+    description: Ouvrir le menu
+    permission: bbr.default
+  bbrleave:
+    description: Passe une Personne en WANTED
+    permission: bbr.default
+  bbrshop:
+    description: Ouvre le Shop
+    permission: bbr.admin
